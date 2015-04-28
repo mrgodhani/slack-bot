@@ -11,4 +11,4 @@
 |
 */
 
-$app->get('/', ['as' => 'slack', 'uses' => 'App\Http\Controllers\MainController@index']);
+$app->post('/', ['as' => 'slack', 'uses' => 'App\Http\Controllers\MainController@index']);
