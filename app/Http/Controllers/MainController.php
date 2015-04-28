@@ -9,8 +9,6 @@ class MainController extends Controller {
 
     public function index(Request $request)
     {
-
-        return $request->all();
         /*$config = [
             'token' => 'xoxb-4651961255-P4bqtDfrfYnizSlLLRllJ0tn',
             'team' => 'cltron',
