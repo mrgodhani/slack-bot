@@ -19,13 +19,12 @@ class MainController extends Controller {
 
         $slack = new Client($config);
         $payload = $request->all();
-        return $payload;
         $incoming = $slack->listen($payload);
         if ($incoming)
         {
             switch($incoming->text())
             {
-                case "Hi":
+                case "Hello":
                     $incoming->respond("It is currently ".date('g:m A T'));
                     break;
                 default:
