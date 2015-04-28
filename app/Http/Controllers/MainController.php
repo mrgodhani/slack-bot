@@ -21,6 +21,18 @@ class MainController extends Controller {
         Log::info($request->all());
         $payload = $request->all();
         $incoming = $slack->listen($payload);
+        if ($incoming)
+        {
+            switch($incoming->text())
+            {
+                case "Hi":
+                    $incoming->respond("It is currently ".date('g:m A T'));
+                    break;
+                default:
+                    $incoming->respond("I don't understand what you're asking.");
+                    break;
+            }
+        }
     }
 
 }
