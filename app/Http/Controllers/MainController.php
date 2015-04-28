@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use ThreadMeUp\Slack\Client;
 use App\Http\Controllers\Controller;
 
@@ -16,6 +18,7 @@ class MainController extends Controller {
         ];
 
         $slack = new Client($config);
+        Log::info(Request::all());
         $payload = Request::all();
         $incoming = $slack->listen($payload);
     }
