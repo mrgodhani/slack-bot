@@ -15,7 +15,7 @@ class MainController extends Controller {
             'username' => 'meet',
             'icon' => 'ICON', // Auto detects if it's an icon_url or icon_emoji
             'parse' => '', // __construct function in Client.php calls for the parse parameter
-        ]
+        ];
 
         $slack = new Client($config);
         $payload = $request->all();
