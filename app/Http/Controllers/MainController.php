@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class MainController extends Controller {
 
-    public function index()
+    public function index(Request $request)
     {
         $config = [
             'token' => 'xoxb-4651961255-P4bqtDfrfYnizSlLLRllJ0tn',
@@ -18,8 +18,8 @@ class MainController extends Controller {
         ];
 
         $slack = new Client($config);
-        Log::info(Request::all());
-        $payload = Request::all();
+        Log::info($request->all());
+        $payload = $request->all();
         $incoming = $slack->listen($payload);
     }
 
