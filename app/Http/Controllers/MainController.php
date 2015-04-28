@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use ThreadMeUp\Slack\Client;
 use App\Http\Controllers\Controller;
