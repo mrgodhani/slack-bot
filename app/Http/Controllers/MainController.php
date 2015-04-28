@@ -18,8 +18,8 @@ class MainController extends Controller {
         ];
 
         $slack = new Client($config);
-        $payload = $request->all()
-            return $payload;
+        $payload = $request->all();
+        return $payload;
         $incoming = $slack->listen($payload);
         if ($incoming)
         {
